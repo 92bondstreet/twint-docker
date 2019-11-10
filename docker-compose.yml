@@ -19,12 +19,14 @@ services:
         hard: -1
     volumes:
       - esdata01:/usr/share/elasticsearch/data
+    restart: always
     ports:
       - "${ES_PORT}:9200"
 
   kibana:
     image: docker.elastic.co/kibana/kibana:7.0.1
     container_name: twint_kibana
+    restart: always
     ports:
       - "${KIBANA_PORT}:5601"
 
