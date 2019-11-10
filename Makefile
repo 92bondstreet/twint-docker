@@ -1,13 +1,10 @@
 SHELL := /bin/bash
 
-build: ## build a ready-production web application with Docker
-	docker-compose build
+build: ## build and up containers
+	docker-compose up -d --build
 
-down:
+down: ## down all containers
 	docker-compose down
-
-up:
-	docker-compose up -d elasticsearch kibana
 
 help: ## This help dialog.
 	@IFS=$$'\n' ; \
