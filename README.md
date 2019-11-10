@@ -3,7 +3,23 @@
 ## 🏗️ Installation
 
 ```sh
+❯ make network
 ❯ make build
+❯ docker-compose run --rm -v $PWD/twint:/srv/twint twint twint -u username --followers -es twint_elasticsearch:9200 - Scrape a Twitter user followers to Elasticsearch
+```
+
+##
+
+```sh
+# Copy twintgraph from localhost to staging with mappings and data
+❯ docker run --rm --net=host -ti taskrabbit/elasticsearch-dump \
+  --input=http://localhost:port/twintgraph \
+  --output=staging.es.com:port/twintgraph \
+  --type=mapping
+❯ docker run --rm --net=host -ti taskrabbit/elasticsearch-dump \
+  --input=http://localhost:port/twintgraph \
+  --output=staging.es.com:port/twintgraph \
+  --type=data
 ```
 
 ## 🧐 What's inside?

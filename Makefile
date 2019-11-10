@@ -6,6 +6,9 @@ build: ## build and up containers
 down: ## down all containers
 	docker-compose down
 
+network: ## create the external network
+	docker network create nw_twint
+
 help: ## This help dialog.
 	@IFS=$$'\n' ; \
 	intro_lines=(`fgrep -h "###" $(MAKEFILE_LIST) | fgrep -v fgrep | sed -e 's/###//'`); \
