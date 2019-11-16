@@ -8,7 +8,7 @@
 ❯ docker-compose run --rm -v $PWD/twint:/srv/twint twint twint -u username --followers -es twint_elasticsearch:9200 - Scrape a Twitter user followers to Elasticsearch
 ```
 
-##
+## 💾 Dump
 
 ```sh
 # Copy twintgraph from localhost to staging with mappings and data

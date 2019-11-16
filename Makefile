@@ -3,6 +3,9 @@ SHELL := /bin/bash
 build: ## build and up containers
 	docker-compose up -d --build
 
+build-portainer: ## build and up containers
+	docker-compose -f docker-compose-portainer.yml up -d --build
+
 down: ## down all containers
 	docker-compose down
 
