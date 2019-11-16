@@ -13,6 +13,10 @@ services:
       - cluster.name=docker-cluster
       - bootstrap.memory_lock=true
       - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+      - "http.cors.enabled=true"
+      - "http.cors.allow-credentials=true"
+      - "http.cors.allow-origin=*"
+      - "http.cors.allow-headers=X-Requested-With,X-Auth-Token,Content-Type,Content-Length,Authorization,Access-Control-Allow-Headers,Accept"
     ulimits:
       memlock:
         soft: -1
